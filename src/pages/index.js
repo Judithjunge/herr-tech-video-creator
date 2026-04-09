@@ -417,7 +417,13 @@ export default function HomePage() {
                   <p style={{ color: T.accent, fontSize: 13, fontWeight: 600, margin: '0 0 6px' }}>✅ So geht's trotzdem:</p>
                   <ol style={{ color: '#ccc', fontSize: 13, margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>
                     <li>Video im Browser auf {platformBlock} öffnen</li>
-                    <li>Mit einem Tool wie <strong style={{ color: '#fff' }}>cobalt.tools</strong> herunterladen</li>
+                    <li>Mit <strong style={{ color: '#fff' }}>
+                      {platformBlock === 'YouTube' ? (
+                        <a href="https://app.ytdown.to/de23/" target="_blank" rel="noopener noreferrer" style={{ color: T.accent, textDecoration: 'underline' }}>ytdown.to</a>
+                      ) : (
+                        <a href="https://cobalt.tools" target="_blank" rel="noopener noreferrer" style={{ color: T.accent, textDecoration: 'underline' }}>cobalt.tools</a>
+                      )}
+                    </strong> herunterladen</li>
                     <li>Hier oben auf <strong style={{ color: '#fff' }}>"Datei hochladen"</strong> wechseln und hochladen</li>
                   </ol>
                 </div>
