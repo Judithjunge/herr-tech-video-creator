@@ -38,7 +38,7 @@ const PLATFORM_BLOCK_PATTERNS = [
 ];
 
 function parsePlatformError(rawError, url) {
-  const isBlockedMsg = /sign in|bot|rate.limit|login required|not available|format is not available/i.test(rawError);
+  const isBlockedMsg = /sign in|bot|rate.limit|login required|not available|format is not available|error\.api\.\w+\.login|cobalt.*login|youtube\.login/i.test(rawError);
   if (!isBlockedMsg) return null;
 
   let platform = 'Diese Plattform';
