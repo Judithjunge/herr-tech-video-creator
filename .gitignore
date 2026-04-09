@@ -1,0 +1,13 @@
+.next/
+node_modules/
+.env
+.env.local
+.env*.local
+uploads/
+tmp/
+out/
+data/
+transcripts/
+*cookies.txt
+*.pem
+*.key

@@ -1,0 +1,228 @@
+{
+  "text": "O Claudio agora edita todos os meus vídeos e criativos, legenda, corta e ainda gera ilustrações. Vem comigo que eu vou te mostrar como. Tudo começou comigo vendo um vídeo onde o autor ensinava a gerar ilustrações utilizando a skill ReMotion, que basicamente vai pegar um comando que você deu e com base nela ilustrar a descrição que você detalhou nesse prompt. E eu pensei, bom, se o Claudio, junto com o ReMotion, pode gerar a ilustração pra mim com base em um comando de texto, será que ele não pode editar um vídeo meu? E foi aí que eu comecei a testar algumas hipóteses e cheguei nesse resultado. Uma aplicação feita com Cloud Code que roda local, que me permite subir o meu vídeo bruto em formato de MP4, vídeos de até 10 minutos. Ela vai transcrever todo esse vídeo utilizando a API da OpenAI, vai passar toda a minutagem desse vídeo pro Claudio, que vai gerar um prompt completo e junto com a skill do ReMotion vai gerar todas as minhas ilustrações. E o processo é muito simples. Eu vou selecionar o vídeo que eu quero editar, MP4, como esse aqui que vocês estão vendo. Automaticamente eu posso dar um prompt de como que eu quero que essa edição seja feita, mas nesse caso eu vou deixar a própria AI fazer isso pra mim. E pronto. Depois que essa aplicação faz toda a transcrição do meu vídeo, gera as cenas com base nos framers e nas minutagens e gera todas as ilustrações, é essa página aqui que eu tenho acesso. É a página onde eu posso refinar todo esse conteúdo aqui, toda essa ilustração com inteligência artificial, onde eu tenho basicamente todas as telas ilustradas do meu vídeo e onde eu consigo analisar toda a timeline do vídeo pra que eu possa fazer correções. Vídeo editado, tá tudo certo, basta eu clicar em renderizar o meu vídeo e pronto. Transcrição do vídeo feito com a OpenAI, análise dessa transcrição e minutagem feita pelo cloud, geração do prompt pra ilustração desse vídeo feita pelo cloud, ilustrações feitas com o Emotion, renderização feita com o Remotion e de pronto, baixa eu realizar o download. E esse é o resultado da edição 100% feita pelo Cloud Code. A sua clínica perde até 15 mil reais por mês e você nem percebe, e eu vou te mostrar essa conta. Dois pacientes que faltam por dia porque ninguém confirmou a consulta. São 600 reais por dia que evapora. Multiplica por 22 dias úteis. São 13 mil e 200 reais por mês. Agora somos leads de tráfego que mandaram mensagem às 8 horas da noite e nunca receberam resposta. Foram pro concorrente que respondeu primeiro. 78% dos pacientes agendam com quem responde primeiro. Lembrando que nós não demos um prompt lá no início de como nós queríamos essa edição. Comenta aqui o quanto de dinheiro isso economizaria e de tempo aí no seu negócio. Todos os meus criativos e os vídeos que eu venho postando aqui nas minhas redes sociais estão sendo 100% editados com essa aplicação simples que eu fiz no Cloud Code.",
+  "segments": [
+    {
+      "start": 0,
+      "end": 5.840000152587891,
+      "text": "O Claudio agora edita todos os meus vídeos e criativos, legenda, corta e ainda gera ilustrações."
+    },
+    {
+      "start": 5.840000152587891,
+      "end": 7.480000019073486,
+      "text": "Vem comigo que eu vou te mostrar como."
+    },
+    {
+      "start": 7.480000019073486,
+      "end": 11.600000381469727,
+      "text": "Tudo começou comigo vendo um vídeo onde o autor ensinava a gerar ilustrações utilizando"
+    },
+    {
+      "start": 11.600000381469727,
+      "end": 17.040000915527344,
+      "text": "a skill ReMotion, que basicamente vai pegar um comando que você deu e com base nela ilustrar"
+    },
+    {
+      "start": 17.040000915527344,
+      "end": 20.600000381469727,
+      "text": "a descrição que você detalhou nesse prompt."
+    },
+    {
+      "start": 20.600000381469727,
+      "end": 25.399999618530273,
+      "text": "E eu pensei, bom, se o Claudio, junto com o ReMotion, pode gerar a ilustração pra mim"
+    },
+    {
+      "start": 25.399999618530273,
+      "end": 29.079999923706055,
+      "text": "com base em um comando de texto, será que ele não pode editar um vídeo meu?"
+    },
+    {
+      "start": 29.280000686645508,
+      "end": 33.279998779296875,
+      "text": "E foi aí que eu comecei a testar algumas hipóteses e cheguei nesse resultado."
+    },
+    {
+      "start": 33.279998779296875,
+      "end": 36.79999923706055,
+      "text": "Uma aplicação feita com Cloud Code que roda local, que me permite subir o meu vídeo"
+    },
+    {
+      "start": 36.79999923706055,
+      "end": 40,
+      "text": "bruto em formato de MP4, vídeos de até 10 minutos."
+    },
+    {
+      "start": 40,
+      "end": 45.63999938964844,
+      "text": "Ela vai transcrever todo esse vídeo utilizando a API da OpenAI, vai passar toda a minutagem"
+    },
+    {
+      "start": 45.63999938964844,
+      "end": 51.31999969482422,
+      "text": "desse vídeo pro Claudio, que vai gerar um prompt completo e junto com a skill do ReMotion"
+    },
+    {
+      "start": 51.31999969482422,
+      "end": 53.79999923706055,
+      "text": "vai gerar todas as minhas ilustrações."
+    },
+    {
+      "start": 53.79999923706055,
+      "end": 55.15999984741211,
+      "text": "E o processo é muito simples."
+    },
+    {
+      "start": 55.15999984741211,
+      "end": 60.31999969482422,
+      "text": "Eu vou selecionar o vídeo que eu quero editar, MP4, como esse aqui que vocês estão vendo."
+    },
+    {
+      "start": 60.31999969482422,
+      "end": 65.55999755859375,
+      "text": "Automaticamente eu posso dar um prompt de como que eu quero que essa edição seja feita,"
+    },
+    {
+      "start": 65.55999755859375,
+      "end": 68.44000244140625,
+      "text": "mas nesse caso eu vou deixar a própria AI fazer isso pra mim."
+    },
+    {
+      "start": 68.44000244140625,
+      "end": 69.44000244140625,
+      "text": "E pronto."
+    },
+    {
+      "start": 69.44000244140625,
+      "end": 74.19999694824219,
+      "text": "Depois que essa aplicação faz toda a transcrição do meu vídeo, gera as cenas com base nos"
+    },
+    {
+      "start": 74.19999694824219,
+      "end": 79.44000244140625,
+      "text": "framers e nas minutagens e gera todas as ilustrações, é essa página aqui que eu"
+    },
+    {
+      "start": 79.44000244140625,
+      "end": 80.44000244140625,
+      "text": "tenho acesso."
+    },
+    {
+      "start": 80.44000244140625,
+      "end": 85,
+      "text": "É a página onde eu posso refinar todo esse conteúdo aqui, toda essa ilustração com"
+    },
+    {
+      "start": 85,
+      "end": 91.04000091552734,
+      "text": "inteligência artificial, onde eu tenho basicamente todas as telas ilustradas do meu vídeo e"
+    },
+    {
+      "start": 91.04000091552734,
+      "end": 96.19999694824219,
+      "text": "onde eu consigo analisar toda a timeline do vídeo pra que eu possa fazer correções."
+    },
+    {
+      "start": 96.19999694824219,
+      "end": 100.87999725341797,
+      "text": "Vídeo editado, tá tudo certo, basta eu clicar em renderizar o meu vídeo e pronto."
+    },
+    {
+      "start": 100.87999725341797,
+      "end": 107.12000274658203,
+      "text": "Transcrição do vídeo feito com a OpenAI, análise dessa transcrição e minutagem feita"
+    },
+    {
+      "start": 107.12000274658203,
+      "end": 112.95999908447266,
+      "text": "pelo cloud, geração do prompt pra ilustração desse vídeo feita pelo cloud, ilustrações"
+    },
+    {
+      "start": 112.95999908447266,
+      "end": 118.19999694824219,
+      "text": "feitas com o Emotion, renderização feita com o Remotion e de pronto, baixa eu realizar"
+    },
+    {
+      "start": 118.19999694824219,
+      "end": 119.19999694824219,
+      "text": "o download."
+    },
+    {
+      "start": 119.19999694824219,
+      "end": 122.16000366210938,
+      "text": "E esse é o resultado da edição 100% feita pelo Cloud Code."
+    },
+    {
+      "start": 122.16000366210938,
+      "end": 126.87999725341797,
+      "text": "A sua clínica perde até 15 mil reais por mês e você nem percebe, e eu vou te mostrar"
+    },
+    {
+      "start": 126.87999725341797,
+      "end": 127.87999725341797,
+      "text": "essa conta."
+    },
+    {
+      "start": 127.87999725341797,
+      "end": 131.27999877929688,
+      "text": "Dois pacientes que faltam por dia porque ninguém confirmou a consulta."
+    },
+    {
+      "start": 131.27999877929688,
+      "end": 134.8000030517578,
+      "text": "São 600 reais por dia que evapora."
+    },
+    {
+      "start": 134.8000030517578,
+      "end": 137.24000549316406,
+      "text": "Multiplica por 22 dias úteis."
+    },
+    {
+      "start": 137.24000549316406,
+      "end": 139.9199981689453,
+      "text": "São 13 mil e 200 reais por mês."
+    },
+    {
+      "start": 139.9199981689453,
+      "end": 145,
+      "text": "Agora somos leads de tráfego que mandaram mensagem às 8 horas da noite e nunca receberam"
+    },
+    {
+      "start": 145,
+      "end": 146,
+      "text": "resposta."
+    },
+    {
+      "start": 146,
+      "end": 148.24000549316406,
+      "text": "Foram pro concorrente que respondeu primeiro."
+    },
+    {
+      "start": 148.24000549316406,
+      "end": 152.9600067138672,
+      "text": "78% dos pacientes agendam com quem responde primeiro."
+    },
+    {
+      "start": 152.9600067138672,
+      "end": 157.24000549316406,
+      "text": "Lembrando que nós não demos um prompt lá no início de como nós queríamos essa edição."
+    },
+    {
+      "start": 157.24000549316406,
+      "end": 162.27999877929688,
+      "text": "Comenta aqui o quanto de dinheiro isso economizaria e de tempo aí no seu negócio."
+    },
+    {
+      "start": 162.27999877929688,
+      "end": 165.39999389648438,
+      "text": "Todos os meus criativos e os vídeos que eu venho postando aqui nas minhas redes sociais"
+    },
+    {
+      "start": 165.39999389648438,
+      "end": 170,
+      "text": "estão sendo 100% editados com essa aplicação simples que eu fiz no Cloud Code."
+    }
+  ],
+  "language": "english",
+  "originalLanguage": "portuguese",
+  "duration": 170.17999267578125
+}

@@ -1,0 +1,228 @@
+{
+  "text": "Claudio bearbeitet jetzt alle meine Videos und kreativen Inhalte, fügt Untertitel hinzu, schneidet und generiert sogar Illustrationen. Komm mit mir und ich zeige dir, wie. Alles begann damit, dass ich ein Video sah, in dem der Autor lehrte, wie man Illustrationen mit der ReMotion-Fähigkeit generiert, die im Grunde einen Befehl nimmt, den du gegeben hast, und basierend darauf die Beschreibung illustriert, die du in diesem Prompt detailliert hast. Und ich dachte, nun ja, wenn Claudio zusammen mit ReMotion die Illustration für mich basierend auf einem Textbefehl generieren kann, kann er dann nicht mein Video bearbeiten? Und da begann ich, einige Hypothesen zu testen und kam zu diesem Ergebnis. Eine Anwendung, die mit Cloud Code erstellt wurde und lokal läuft, die mir ermöglicht, mein rohes Video im MP4-Format hochzuladen, Videos von bis zu 10 Minuten. Sie wird dieses gesamte Video mit der OpenAI-API transkribieren, die gesamte Zeitmarkierung dieses Videos an Claudio übergeben, der einen vollständigen Prompt generiert und zusammen mit der ReMotion-Fähigkeit alle meine Illustrationen generiert. Und der Prozess ist sehr einfach. Ich werde das Video auswählen, das ich bearbeiten möchte, MP4, wie dieses hier, das ihr seht. Automatisch kann ich einen Prompt geben, wie ich diese Bearbeitung durchgeführt haben möchte, aber in diesem Fall werde ich die KI das selbst für mich tun lassen. Und fertig. Nachdem diese Anwendung die gesamte Transkription meines Videos durchgeführt hat, die Szenen basierend auf den Frames und Zeitmarkierungen generiert und alle Illustrationen generiert hat, ist dies die Seite hier, auf die ich Zugriff habe. Es ist die Seite, auf der ich all diesen Inhalt, diese ganze Illustration mit künstlicher Intelligenz verfeinern kann, wo ich im Grunde alle illustrierten Bildschirme meines Videos habe und wo ich die gesamte Timeline des Videos analysieren kann, damit ich Korrektionen vornehmen kann. Video bearbeitet, alles ist in Ordnung, ich muss nur auf meinen Video rendern klicken und fertig. Videotranskription gemacht mit OpenAI, Analyse dieser Transkription und Zeitmarkierung gemacht von der Cloud, Generierung des Prompts zur Illustration dieses Videos gemacht von der Cloud, Illustrationen gemacht mit Emotion, Rendering gemacht mit Remotion und schon kann ich den Download durchführen. Und das ist das Ergebnis der 100% von Cloud Code durchgeführten Bearbeitung. Ihre Klinik verliert bis zu 15.000 Real pro Monat und Sie bemerken es nicht einmal, und ich werde Ihnen diese Rechnung zeigen. Zwei Patienten, die pro Tag fehlen, weil niemand die Konsultation bestätigt hat. Das sind 600 Real pro Tag, die verdampfen. Multipliziert mit 22 Arbeitstagen. Das sind 13.200 Real pro Monat. Jetzt haben wir Traffic-Leads, die um 20 Uhr eine Nachricht gesendet haben und nie eine Antwort erhalten haben. Sie gingen zum Konkurrenten, der zuerst geantwortet hat. 78% der Patienten buchen bei demjenigen, der zuerst antwortet. Zur Erinnerung: Wir haben am Anfang keinen Prompt gegeben, wie wir diese Bearbeitung durchführen wollten. Kommentiere hier, wie viel Geld dir das sparen würde und wie viel Zeit in deinem Geschäft. Alle meine kreativen Inhalte und die Videos, die ich hier in meinen sozialen Netzwerken poste, werden zu 100% mit dieser einfachen Anwendung bearbeitet, die ich in Cloud Code erstellt habe.",
+  "segments": [
+    {
+      "start": 0,
+      "end": 5.840000152587891,
+      "text": "Claudio bearbeitet jetzt alle meine Videos und kreativen Inhalte, fügt Untertitel hinzu, schneidet und generiert sogar Illustrationen."
+    },
+    {
+      "start": 5.840000152587891,
+      "end": 7.480000019073486,
+      "text": "Komm mit mir und ich zeige dir, wie."
+    },
+    {
+      "start": 7.480000019073486,
+      "end": 11.600000381469727,
+      "text": "Alles begann damit, dass ich ein Video sah, in dem der Autor lehrte, wie man Illustrationen mit"
+    },
+    {
+      "start": 11.600000381469727,
+      "end": 17.040000915527344,
+      "text": "der ReMotion-Fähigkeit generiert, die im Grunde einen Befehl nimmt, den du gegeben hast, und basierend darauf illustriert"
+    },
+    {
+      "start": 17.040000915527344,
+      "end": 20.600000381469727,
+      "text": "die Beschreibung, die du in diesem Prompt detailliert hast."
+    },
+    {
+      "start": 20.600000381469727,
+      "end": 25.399999618530273,
+      "text": "Und ich dachte, nun ja, wenn Claudio zusammen mit ReMotion die Illustration für mich generieren kann"
+    },
+    {
+      "start": 25.399999618530273,
+      "end": 29.079999923706055,
+      "text": "basierend auf einem Textbefehl, kann er dann nicht mein Video bearbeiten?"
+    },
+    {
+      "start": 29.280000686645508,
+      "end": 33.279998779296875,
+      "text": "Und da begann ich, einige Hypothesen zu testen und kam zu diesem Ergebnis."
+    },
+    {
+      "start": 33.279998779296875,
+      "end": 36.79999923706055,
+      "text": "Eine Anwendung, die mit Cloud Code erstellt wurde und lokal läuft, die mir ermöglicht, mein rohes Video hochzuladen"
+    },
+    {
+      "start": 36.79999923706055,
+      "end": 40,
+      "text": "im MP4-Format, Videos von bis zu 10 Minuten."
+    },
+    {
+      "start": 40,
+      "end": 45.63999938964844,
+      "text": "Sie wird dieses gesamte Video mit der OpenAI-API transkribieren, die gesamte Zeitmarkierung"
+    },
+    {
+      "start": 45.63999938964844,
+      "end": 51.31999969482422,
+      "text": "dieses Videos an Claudio übergeben, der einen vollständigen Prompt generiert und zusammen mit der ReMotion-Fähigkeit"
+    },
+    {
+      "start": 51.31999969482422,
+      "end": 53.79999923706055,
+      "text": "alle meine Illustrationen generiert."
+    },
+    {
+      "start": 53.79999923706055,
+      "end": 55.15999984741211,
+      "text": "Und der Prozess ist sehr einfach."
+    },
+    {
+      "start": 55.15999984741211,
+      "end": 60.31999969482422,
+      "text": "Ich werde das Video auswählen, das ich bearbeiten möchte, MP4, wie dieses hier, das ihr seht."
+    },
+    {
+      "start": 60.31999969482422,
+      "end": 65.55999755859375,
+      "text": "Automatisch kann ich einen Prompt geben, wie ich diese Bearbeitung durchführen möchte,"
+    },
+    {
+      "start": 65.55999755859375,
+      "end": 68.44000244140625,
+      "text": "aber in diesem Fall werde ich die KI das selbst für mich tun lassen."
+    },
+    {
+      "start": 68.44000244140625,
+      "end": 69.44000244140625,
+      "text": "Und fertig."
+    },
+    {
+      "start": 69.44000244140625,
+      "end": 74.19999694824219,
+      "text": "Nachdem diese Anwendung die gesamte Transkription meines Videos durchgeführt hat, die Szenen basierend auf den"
+    },
+    {
+      "start": 74.19999694824219,
+      "end": 79.44000244140625,
+      "text": "Frames und Zeitmarkierungen generiert und alle Illustrationen generiert hat, ist dies die Seite hier, auf die ich"
+    },
+    {
+      "start": 79.44000244140625,
+      "end": 80.44000244140625,
+      "text": "Zugriff habe."
+    },
+    {
+      "start": 80.44000244140625,
+      "end": 85,
+      "text": "Es ist die Seite, auf der ich all diesen Inhalt hier, diese ganze Illustration mit"
+    },
+    {
+      "start": 85,
+      "end": 91.04000091552734,
+      "text": "künstlicher Intelligenz verfeinern kann, wo ich im Grunde alle illustrierten Bildschirme meines Videos habe und"
+    },
+    {
+      "start": 91.04000091552734,
+      "end": 96.19999694824219,
+      "text": "wo ich die gesamte Timeline des Videos analysieren kann, damit ich Korrektionen vornehmen kann."
+    },
+    {
+      "start": 96.19999694824219,
+      "end": 100.87999725341797,
+      "text": "Video bearbeitet, alles ist in Ordnung, ich muss nur auf Rendering klicken und fertig."
+    },
+    {
+      "start": 100.87999725341797,
+      "end": 107.12000274658203,
+      "text": "Videotranskription gemacht mit OpenAI, Analyse dieser Transkription und Zeitmarkierung gemacht"
+    },
+    {
+      "start": 107.12000274658203,
+      "end": 112.95999908447266,
+      "text": "von der Cloud, Generierung des Prompts zur Illustration dieses Videos gemacht von der Cloud, Illustrationen"
+    },
+    {
+      "start": 112.95999908447266,
+      "end": 118.19999694824219,
+      "text": "gemacht mit Emotion, Rendering gemacht mit Remotion und schon kann ich den"
+    },
+    {
+      "start": 118.19999694824219,
+      "end": 119.19999694824219,
+      "text": "Download durchführen."
+    },
+    {
+      "start": 119.19999694824219,
+      "end": 122.16000366210938,
+      "text": "Und das ist das Ergebnis der 100% von Cloud Code durchgeführten Bearbeitung."
+    },
+    {
+      "start": 122.16000366210938,
+      "end": 126.87999725341797,
+      "text": "Ihre Klinik verliert bis zu 15.000 Real pro Monat und Sie bemerken es nicht einmal, und ich werde Ihnen"
+    },
+    {
+      "start": 126.87999725341797,
+      "end": 127.87999725341797,
+      "text": "diese Rechnung zeigen."
+    },
+    {
+      "start": 127.87999725341797,
+      "end": 131.27999877929688,
+      "text": "Zwei Patienten, die pro Tag fehlen, weil niemand die Konsultation bestätigt hat."
+    },
+    {
+      "start": 131.27999877929688,
+      "end": 134.8000030517578,
+      "text": "Das sind 600 Real pro Tag, die verdampfen."
+    },
+    {
+      "start": 134.8000030517578,
+      "end": 137.24000549316406,
+      "text": "Multipliziert mit 22 Arbeitstagen."
+    },
+    {
+      "start": 137.24000549316406,
+      "end": 139.9199981689453,
+      "text": "Das sind 13.200 Real pro Monat."
+    },
+    {
+      "start": 139.9199981689453,
+      "end": 145,
+      "text": "Jetzt haben wir Traffic-Leads, die um 20 Uhr eine Nachricht gesendet haben und nie eine Antwort erhalten haben."
+    },
+    {
+      "start": 145,
+      "end": 146,
+      "text": "Antwort erhalten."
+    },
+    {
+      "start": 146,
+      "end": 148.24000549316406,
+      "text": "Sie gingen zum Konkurrenten, der zuerst geantwortet hat."
+    },
+    {
+      "start": 148.24000549316406,
+      "end": 152.9600067138672,
+      "text": "78% der Patienten buchen bei demjenigen, der zuerst antwortet."
+    },
+    {
+      "start": 152.9600067138672,
+      "end": 157.24000549316406,
+      "text": "Zur Erinnerung: Wir haben am Anfang keinen Prompt gegeben, wie wir diese Bearbeitung durchführen wollten."
+    },
+    {
+      "start": 157.24000549316406,
+      "end": 162.27999877929688,
+      "text": "Kommentiere hier, wie viel Geld dir das sparen würde und wie viel Zeit in deinem Geschäft."
+    },
+    {
+      "start": 162.27999877929688,
+      "end": 165.39999389648438,
+      "text": "Alle meine kreativen Inhalte und die Videos, die ich hier in meinen sozialen Netzwerken poste,"
+    },
+    {
+      "start": 165.39999389648438,
+      "end": 170,
+      "text": "werden zu 100% mit dieser einfachen Anwendung bearbeitet, die ich in Cloud Code erstellt habe."
+    }
+  ],
+  "language": "german",
+  "originalLanguage": "portuguese",
+  "duration": 170.17999267578125
+}
