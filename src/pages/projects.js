@@ -131,6 +131,19 @@ export default function ProjectsPage() {
     } finally { setDeleting(false); }
   }
 
+  async function cleanupEmpty() {
+    const empty = projects.filter(p => !p.scenes?.length);
+    if (!empty.length) return;
+    setDeleting(true);
+    try {
+      await Promise.all(empty.map(p => fetch(`/api/projects/${p.id}/delete`, { method: 'POST' })));
+      setPage(1);
+      load();
+    } finally { setDeleting(false); }
+  }
+
+  const emptyCount = projects.filter(p => !p.scenes?.length).length;
+
   const totalPages = Math.max(1, Math.ceil(projects.length / PAGE_SIZE));
   const paged = projects.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
@@ -180,11 +193,21 @@ export default function ProjectsPage() {
                 {projects.length > 0 ? `${projects.length} Projekt${projects.length !== 1 ? 'e' : ''} — klicke rein um dort weiterzumachen wo du aufgehört hast.` : 'Alle deine Videos — klicke rein um dort weiterzumachen wo du aufgehört hast.'}
               </p>
             </div>
-            {totalPages > 1 && (
-              <span style={{ fontSize:13, color:T.muted }}>
-                Seite {page} / {totalPages}
-              </span>
-            )}
+            <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+              {emptyCount > 0 && (
+                <button onClick={cleanupEmpty} disabled={deleting}
+                  style={{ background:'rgba(239,68,68,.08)', border:'1px solid rgba(239,68,68,.3)', borderRadius:9999, color:T.red, fontSize:12, fontWeight:600, padding:'6px 14px', cursor:'pointer', whiteSpace:'nowrap', transition:'background .15s' }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,.15)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'rgba(239,68,68,.08)'}>
+                  {deleting ? '…' : `🗑 ${emptyCount} leere${emptyCount !== 1 ? '' : 's'} Projekt${emptyCount !== 1 ? 'e' : ''} löschen`}
+                </button>
+              )}
+              {totalPages > 1 && (
+                <span style={{ fontSize:13, color:T.muted }}>
+                  Seite {page} / {totalPages}
+                </span>
+              )}
+            </div>
           </div>
 
           {loading ? (
@@ -342,7 +365,15 @@ export default function ProjectsPage() {
 
                       {/* Delete */}
                       <div onClick={e => e.stopPropagation()} style={{ flexShrink:0, borderLeft:`1px solid ${T.border}`, alignSelf:'stretch', display:'flex', alignItems:'center' }}>
-                        {isConfirm ? (
+                        {scenes.length === 0 ? (
+                          // Leeres Projekt: direkt löschen ohne Confirm
+                          <button onClick={() => deleteProject(p.id)} disabled={deleting} title="Leeres Projekt entfernen"
+                            style={{ background:'rgba(239,68,68,.08)', border:'none', cursor:'pointer', color:T.red, padding:'0 14px', display:'flex', alignItems:'center', alignSelf:'stretch', fontSize:11, fontWeight:600, gap:4, transition:'background .15s' }}
+                            onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,.18)'}
+                            onMouseLeave={e => e.currentTarget.style.background = 'rgba(239,68,68,.08)'}>
+                            🗑 Entfernen
+                          </button>
+                        ) : isConfirm ? (
                           <div style={{ display:'flex', alignItems:'center', gap:6, padding:'0 14px' }}>
                             <span style={{ fontSize:11, color:T.red, whiteSpace:'nowrap' }}>Löschen?</span>
                             <button onClick={() => deleteProject(p.id)} disabled={deleting}
