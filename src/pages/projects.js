@@ -263,6 +263,11 @@ export default function ProjectsPage() {
                                   <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
                                 </svg>
                               </button>
+                              {isAdmin && p.ownerEmail && (
+                                <span style={{ flexShrink:0, fontSize:10, color:'#888', background:'#1a1a1a', border:'1px solid #2a2a2a', borderRadius:4, padding:'1px 6px', fontWeight:500, letterSpacing:'0.02em' }}>
+                                  {p.ownerName ? `${p.ownerName}` : p.ownerEmail.split('@')[0]}
+                                </span>
+                              )}
                             </>
                           )}
                         </div>
