@@ -16,9 +16,20 @@ export default async function handler(req, res) {
     const { email, callbackUrl = '/' } = req.body;
     if (!email) return res.status(400).json({ error: 'E-Mail fehlt' });
 
-    const user = await findUser(email.toLowerCase());
+    let user = await findUser(email.toLowerCase());
 
-    if (!user)                      return res.status(401).json({ error: 'NotFound' });
+    // Auto-Create: Admin-User beim ersten Login automatisch anlegen
+    if (!user) {
+      const adminEmail = (process.env.ADMIN_EMAIL || '').toLowerCase();
+      if (email.toLowerCase() === adminEmail) {
+        user = await prisma.user.create({
+          data: { email: email.toLowerCase(), name: 'Admin', status: 'ACTIVE', role: 'admin' },
+        });
+      } else {
+        return res.status(401).json({ error: 'NotFound' });
+      }
+    }
+
     if (user.status === 'PENDING')  return res.status(401).json({ error: 'PendingApproval' });
     if (user.status === 'DISABLED') return res.status(401).json({ error: 'AccountDisabled' });
 
