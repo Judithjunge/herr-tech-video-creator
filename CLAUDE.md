@@ -13,13 +13,17 @@ AI-gestütztes Video-Erstellungs-Tool (Next.js 14). Automatisiert die Produktion
 
 ## AI-Modelle
 
-| Aufgabe | Modell |
-|---|---|
-| Szenenanalyse, Prompt-Generierung | Claude (claude-sonnet-4-6) |
-| Bildgenerierung (ohne Referenz) | Vertex AI Imagen 4 Ultra (`imagen-4.0-ultra-generate-001`) |
-| Bildgenerierung (mit Referenzbild) | Vertex AI Imagen 3 Capability (`imagen-3.0-capability-001`) |
-| Videogenerierung | FAL.ai (Kling / Veo3) |
-| Transkription | OpenAI Whisper |
+| Aufgabe | Modell | Kosten |
+|---|---|---|
+| Transkription | OpenAI Whisper (`whisper-1`) | $0,006/min |
+| Szenen-Erkennung, Übersetzung | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) | $1/$5 pro 1M Tokens |
+| Screenshot-Analyse, Bild-Prompts | Claude Sonnet 4.6 (`claude-sonnet-4-6`) | $3/$15 pro 1M Tokens |
+| Video-Konzept aus Text-Prompt | Claude Opus 4.6 (`claude-opus-4-6`) | $5/$25 pro 1M Tokens |
+| Bildgenerierung (primär) | Gemini 3 Pro Image Preview (`gemini-3-pro-image-preview`) | ~$0,04/Bild |
+| Bildgenerierung (Fallback) | Gemini 2.5 Flash Image (`gemini-2.5-flash-image`) | ~$0,04/Bild |
+| Bildgenerierung (Legacy/Vertex AI) | Imagen 4 Ultra / Imagen 3 Capability | $0,06/$0,04 pro Bild |
+| Videogenerierung (Kling) | FAL.ai Kling v3 Standard (`fal-ai/kling-video/v3/standard/image-to-video`) | $0,084/sek (ohne Sound) |
+| Videogenerierung (Veo) | FAL.ai Veo 3.1 Lite (`fal-ai/veo3.1/lite/image-to-video`) | $0,03–0,08/sek |
 
 ## Pipeline
 
@@ -29,8 +33,8 @@ Upload / URL / Text-Prompt
   → Szenen-Erkennung (Claude Haiku)
   → Screenshot-Extraktion (FFmpeg, 25%/50%/75% pro Szene)
   → Visuelle Analyse (Claude Vision)
-  → Bildgenerierung (Imagen)
-  → Videogenerierung (FAL)
+  → Bildgenerierung (Gemini / Imagen Fallback)
+  → Videogenerierung (FAL: Kling v3 Standard / Veo 3.1 Lite)
   → Export (Remotion → MP4)
 ```
 

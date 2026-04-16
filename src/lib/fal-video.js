@@ -2,7 +2,7 @@ require('./load-env');
 const fs = require('fs');
 const path = require('path');
 
-const FAL_MODEL_KLING     = 'fal-ai/kling-video/v3/pro/image-to-video';
+const FAL_MODEL_KLING     = 'fal-ai/kling-video/v3/standard/image-to-video';
 const FAL_MODEL_VEO3      = 'fal-ai/veo3.1/lite/image-to-video';
 const FAL_MODEL_VEO3_LITE = FAL_MODEL_VEO3; // kept for backward compat
 
@@ -46,7 +46,7 @@ async function uploadImageToFal(imagePath) {
 }
 
 /**
- * Submit a Kling v3 Pro image-to-video job.
+ * Submit a Kling v3 Standard image-to-video job.
  * duration: any integer 3–15 as string (e.g. "5", "7", "10")
  * Aspect ratio is derived automatically from the input image — no parameter needed.
  */
@@ -59,10 +59,10 @@ async function submitVideoJob({ imageUrl, prompt, duration = '5', audio = true }
     negative_prompt: 'blur, distort, low quality, shaky, artifacts',
     generate_audio:  !!audio,
   };
-  console.log(`[fal/kling-v3] Submitting to ${FAL_MODEL_KLING}`);
-  console.log(`[fal/kling-v3] Payload: ${JSON.stringify({ ...payload, start_image_url: payload.start_image_url?.slice(0, 60) + '...' })}`);
+  console.log(`[fal/kling-v3-std] Submitting to ${FAL_MODEL_KLING}`);
+  console.log(`[fal/kling-v3-std] Payload: ${JSON.stringify({ ...payload, start_image_url: payload.start_image_url?.slice(0, 60) + '...' })}`);
   const result = await fal.queue.submit(FAL_MODEL_KLING, { input: payload });
-  console.log(`[fal/kling-v3] Job submitted: ${result.request_id} (${duration}s)`);
+  console.log(`[fal/kling-v3-std] Job submitted: ${result.request_id} (${duration}s)`);
   return result;
 }
 
