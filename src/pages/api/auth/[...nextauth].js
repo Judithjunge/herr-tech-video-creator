@@ -1,56 +1,49 @@
 import NextAuth from 'next-auth';
 import EmailProvider from 'next-auth/providers/email';
-import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import { prisma } from '../../../lib/prisma';
-import {
-  sendMagicLinkEmail,
-  sendAdminNewUserNotification,
-} from '../../../lib/email';
+import { sendMagicLinkEmail } from '../../../lib/email';
+
+const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || '').toLowerCase().trim();
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
 
   providers: [
     EmailProvider({
-      server: {},  // Wir versenden selbst via sendVerificationRequest
-      from: process.env.EMAIL_FROM || 'noreply@herr.tech',
+      server: {},
+      from: process.env.EMAIL_FROM || 'JuThinkAI <onboarding@resend.dev>',
       sendVerificationRequest: async ({ identifier: email, url }) => {
+        // Nur Admin-E-Mail bekommt überhaupt einen Magic Link
+        if (email.toLowerCase().trim() !== ADMIN_EMAIL) {
+          console.log('[auth] Blocked magic link request for non-admin email:', email);
+          return;
+        }
         await sendMagicLinkEmail(email, url);
       },
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      allowDangerousEmailAccountLinking: true,
     }),
   ],
 
   pages: {
-    signIn:      '/auth/signin',
+    signIn:        '/auth/signin',
     verifyRequest: '/auth/verify',
-    error:       '/auth/error',
+    error:         '/auth/error',
   },
 
   callbacks: {
-    async signIn({ user }) {
-      // Prüfe Status in der DB
-      const dbUser = await prisma.user.findUnique({ where: { email: user.email } });
-      if (!dbUser) {
-        // Noch nicht in DB — wird durch createUser-Event angelegt (Google OAuth)
-        // Kurz blockieren bis Event feuert; NextAuth erstellt den User zuerst
-        return true; // createUser-Event setzt status auf PENDING und blockiert dann
+    async signIn({ user, email }) {
+      const addr = (user?.email || email?.verificationRequest || '').toLowerCase().trim();
+      if (addr !== ADMIN_EMAIL) {
+        console.log('[auth] Blocked sign-in for non-admin email:', addr);
+        return false; // -> /auth/error?error=AccessDenied
       }
-      if (dbUser.status === 'PENDING')  return `/auth/signin?error=PendingApproval`;
-      if (dbUser.status === 'DISABLED') return `/auth/signin?error=AccountDisabled`;
       return true;
     },
-
     async session({ session, user }) {
       if (session.user) {
-        session.user.id     = user.id;
-        session.user.role   = user.role;
-        session.user.status = user.status;
+        session.user.id = user.id;
+        session.user.role = 'admin';
+        session.user.status = 'ACTIVE';
       }
       return session;
     },
@@ -58,22 +51,15 @@ export const authOptions = {
 
   events: {
     async createUser({ user }) {
-      // Neuer User wurde angelegt (OAuth oder Email-Registrierung via Prisma direkt)
-      // Status auf PENDING setzen falls noch nicht gesetzt
-      const dbUser = await prisma.user.findUnique({ where: { id: user.id } });
-      if (dbUser?.status === 'ACTIVE') return; // Admin direkt hinzugefügt → überspringen
-
+      // Erster Login: direkt Admin/ACTIVE setzen
       await prisma.user.update({
         where: { id: user.id },
-        data: { status: 'PENDING' },
+        data: { status: 'ACTIVE', role: 'admin' },
       });
-      await sendAdminNewUserNotification(user.email, user.name);
     },
   },
 
-  session: {
-    strategy: 'database',
-  },
+  session: { strategy: 'database' },
 };
 
 export default NextAuth(authOptions);

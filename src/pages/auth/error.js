@@ -56,7 +56,7 @@ export default function ErrorPage() {
           <div style={{ fontSize: 48, marginBottom: 20 }}>{info.icon}</div>
           <div style={{ fontSize: 11, fontWeight: 700, color: T.accent,
                         letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: 16 }}>
-            HERR TECH
+            JuThinkAI
           </div>
           <h1 style={{ margin: '0 0 14px', fontSize: 20, fontWeight: 800,
                        color: T.text, letterSpacing: '-0.3px' }}>

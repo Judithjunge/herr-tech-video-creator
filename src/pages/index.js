@@ -244,7 +244,7 @@ export default function HomePage() {
         {/* Nav */}
         <nav style={{ padding: '0 40px', height: 64, borderBottom: `1px solid ${T.border}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <img src="/herr-tech-logo.png" alt="HERR TECH" style={{ height: 18, objectFit: 'contain' }} />
+            <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 14, color: "#0a1437", letterSpacing: "-0.01em" }}>JuThinkAI <span style={{color:"#FF5757"}}>Video</span></span>
             <span style={{ color: T.muted, fontSize: 13 }}>/ social video creator</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

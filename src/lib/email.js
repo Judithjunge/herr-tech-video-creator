@@ -56,7 +56,7 @@ function baseTemplate({ title, body, ctaText, ctaUrl, footer }) {
           <td style="padding:28px 40px;border-bottom:1px solid ${T.border};">
             <span style="font-size:11px;font-weight:700;color:${T.accent};
                          letter-spacing:2.5px;text-transform:uppercase;">
-              HERR TECH · KI Video Creator
+              JuThinkAI Video Creator
             </span>
           </td>
         </tr>

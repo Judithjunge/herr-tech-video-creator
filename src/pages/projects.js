@@ -160,7 +160,7 @@ export default function ProjectsPage() {
         {/* Nav */}
         <nav style={{ padding:'0 40px', height:64, borderBottom:`1px solid ${T.border}`, display:'flex', alignItems:'center', justifyContent:'space-between', position:'sticky', top:0, background:T.bg, zIndex:100 }}>
           <div style={{ display:'flex', alignItems:'center', gap:12 }}>
-            <img src="/herr-tech-logo.png" alt="HERR TECH" style={{ height:18, objectFit:'contain', cursor:'pointer' }} onClick={() => router.push('/')} />
+            <img src="/herr-tech-logo.png" alt="JuThinkAI" style={{ height:18, objectFit:'contain', cursor:'pointer' }} onClick={() => router.push('/')} />
             <span style={{ color:T.muted, fontSize:13 }}>/ projekte</span>
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:12 }}>
