@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { signOut } from 'next-auth/react';
 import Head from 'next/head';
 
 const T = {
@@ -882,7 +881,7 @@ export default function ExportPage() {
               style={{ background: 'none', border: `1px solid ${T.border}`, borderRadius: 9999, color: T.muted, fontSize: 12, padding: '5px 14px', cursor: 'pointer' }}>
               Projekte
             </button>
-            <button onClick={() => signOut({ callbackUrl: '/auth/signin' })} style={{ background:'none', border:'none', color:T.muted, fontSize:12, cursor:'pointer', padding:'4px 8px' }}>Abmelden</button>
+            <button onClick={() => window.location.reload()} style={{ background:'none', border:'none', color:T.muted, fontSize:12, cursor:'pointer', padding:'4px 8px' }}>Abmelden</button>
           </div>
         </nav>
 
