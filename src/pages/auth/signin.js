@@ -4,16 +4,16 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 const T = {
-  bg:        '#000000',
-  surface:   '#0d0d0d',
-  card:      '#111111',
-  border:    '#1e1e1e',
-  accent:    '#B598E2',
-  accentBg:  'rgba(181,152,226,0.08)',
-  accentBrd: 'rgba(181,152,226,0.25)',
-  text:      '#ffffff',
-  muted:     '#666666',
-  subtle:    '#222222',
+  bg:        '#ffffff',
+  surface:   '#f8f9fc',
+  card:      '#ffffff',
+  border:    '#e5e7eb',
+  accent:    '#FF5757',
+  accentBg:  'rgba(255,87,87,0.08)',
+  accentBrd: 'rgba(255,87,87,0.25)',
+  text:      '#0a1437',
+  muted:     '#6b7280',
+  subtle:    '#f3f4f6',
   green:     '#22c55e',
   greenBg:   'rgba(34,197,94,0.08)',
   greenBrd:  'rgba(34,197,94,0.25)',
@@ -120,7 +120,7 @@ export default function SignInPage() {
 
   return (
     <>
-      <Head><title>Anmelden — Herr Tech</title></Head>
+      <Head><title>Anmelden — JuThinkAI</title></Head>
       <style>{`
         * { box-sizing: border-box; }
         @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }

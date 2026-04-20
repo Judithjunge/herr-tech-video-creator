@@ -2,9 +2,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const T = {
-  bg: '#000000', card: '#111111', border: '#1e1e1e',
-  accent: '#B598E2', accentBg: 'rgba(181,152,226,0.08)',
-  text: '#ffffff', muted: '#666666',
+  bg: '#ffffff', card: '#ffffff', border: '#e5e7eb',
+  accent: '#FF5757', accentBg: 'rgba(255,87,87,0.08)',
+  text: '#0a1437', muted: '#6b7280',
 };
 
 export default function VerifyPage() {
@@ -12,7 +12,7 @@ export default function VerifyPage() {
 
   return (
     <>
-      <Head><title>E-Mail überprüfen — Herr Tech</title></Head>
+      <Head><title>E-Mail überprüfen — JuThinkAI</title></Head>
       <div style={{
         minHeight: '100vh', background: T.bg,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -35,7 +35,7 @@ export default function VerifyPage() {
           <p style={{ margin: '0 0 24px', fontSize: 15, color: T.muted, lineHeight: 1.7 }}>
             Prüfe dein Postfach und klicke auf den Login-Link in der E-Mail.
           </p>
-          <div style={{ background: T.accentBg, border: `1px solid rgba(181,152,226,0.25)`,
+          <div style={{ background: T.accentBg, border: `1px solid rgba(255, 87, 87,0.25)`,
                         borderRadius: 10, padding: '14px 18px', marginBottom: 28,
                         fontSize: 13, color: T.muted, lineHeight: 1.6 }}>
             ⚡ Der Link ist 30 Minuten gültig.<br />

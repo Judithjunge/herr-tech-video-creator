@@ -100,7 +100,7 @@ export default function AdminPanel() {
           {stats && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16, marginBottom: 32 }}>
               {[
-                { label: 'Gesamt', value: stats.users.total, color: '#B598E2' },
+                { label: 'Gesamt', value: stats.users.total, color: '#FF5757' },
                 { label: 'Ausstehend', value: stats.users.pending, color: '#f59e0b' },
                 { label: 'Aktiv', value: stats.users.active, color: '#22c55e' },
                 { label: 'Deaktiviert', value: stats.users.disabled, color: '#ef4444' },
@@ -118,7 +118,7 @@ export default function AdminPanel() {
 
           {/* Add User */}
           <div style={{ background: '#161616', border: '1px solid #222', borderRadius: 8, padding: 20, marginBottom: 24 }}>
-            <h3 style={{ margin: '0 0 16px', fontSize: 15, color: '#B598E2' }}>User direkt hinzufügen</h3>
+            <h3 style={{ margin: '0 0 16px', fontSize: 15, color: '#FF5757' }}>User direkt hinzufügen</h3>
             <form onSubmit={addUser} style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <input
                 value={addEmail}
@@ -137,7 +137,7 @@ export default function AdminPanel() {
               <button
                 type="submit"
                 disabled={addLoading}
-                style={{ background: '#B598E2', color: '#0d0d0d', border: 'none', borderRadius: 6, padding: '8px 20px', fontWeight: 600, cursor: addLoading ? 'not-allowed' : 'pointer' }}
+                style={{ background: '#FF5757', color: '#0d0d0d', border: 'none', borderRadius: 6, padding: '8px 20px', fontWeight: 600, cursor: addLoading ? 'not-allowed' : 'pointer' }}
               >
                 {addLoading ? 'Wird hinzugefügt…' : 'Hinzufügen + Email senden'}
               </button>
@@ -151,7 +151,7 @@ export default function AdminPanel() {
                 key={s}
                 onClick={() => setFilter(s)}
                 style={{
-                  background: filter === s ? '#B598E2' : '#161616',
+                  background: filter === s ? '#FF5757' : '#161616',
                   color: filter === s ? '#0d0d0d' : '#aaa',
                   border: '1px solid #333',
                   borderRadius: 6, padding: '6px 16px', cursor: 'pointer', fontSize: 13, fontWeight: 600,

@@ -5,17 +5,17 @@ import Head from 'next/head';
 
 /* ── Design-Tokens ─────────────────────────────────────────── */
 const T = {
-  bg:        '#000000',
-  surface:   '#0d0d0d',
-  card:      '#111111',
-  border:    '#1e1e1e',
-  accent:    '#B598E2',
-  accentBg:  'rgba(181,152,226,0.08)',
-  accentBrd: 'rgba(181,152,226,0.25)',
-  btn:       '#B598E2',
-  text:      '#ffffff',
-  muted:     '#666666',
-  subtle:    '#222222',
+  bg:        '#ffffff',
+  surface:   '#f8f9fc',
+  card:      '#ffffff',
+  border:    '#e5e7eb',
+  accent:    '#FF5757',
+  accentBg:  'rgba(255,87,87,0.08)',
+  accentBrd: 'rgba(255,87,87,0.25)',
+  btn:       '#FF5757',
+  text:      '#0a1437',
+  muted:     '#6b7280',
+  subtle:    '#f3f4f6',
 };
 
 const FONTS = ['Arial Bold', 'Helvetica Neue', 'Impact', 'Montserrat', 'Oswald', 'Roboto Bold'];
@@ -47,7 +47,7 @@ export default function SetupPage() {
 
   // Formularwerte
   const [format, setFormat] = useState('9:16');
-  const [styleDescription, setStyleDescription] = useState('Herr Tech Stil: dunkler Hintergrund, dynamische Schriften, energetisch');
+  const [styleDescription, setStyleDescription] = useState('JuThinkAI Stil: heller Hintergrund, warme Typografie, JuThinkAI-Rot als Akzent, klar und menschlich');
   const [styleDeviation, setStyleDeviation] = useState(3);
   const [subtitleLanguage, setSubtitleLanguage] = useState('de');
   const [subtitleColor, setSubtitleColor] = useState('#FFFFFF');
@@ -114,11 +114,11 @@ export default function SetupPage() {
 
   return (
     <>
-      <Head><title>Produktions-Setup — Herr Tech</title></Head>
+      <Head><title>Produktions-Setup — JuThinkAI</title></Head>
       <style>{`
         @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
         * { box-sizing:border-box; }
-        input[type=range] { accent-color: #B598E2; }
+        input[type=range] { accent-color: #FF5757; }
         input[type=color] { cursor:pointer; }
       `}</style>
 
@@ -224,7 +224,7 @@ export default function SetupPage() {
                     ? <>
                         <img src={styleImagePreview} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         {styleImageDragging && (
-                          <div style={{ position:'absolute', inset:0, background:'rgba(181,152,226,0.4)', display:'flex', alignItems:'center', justifyContent:'center' }}>
+                          <div style={{ position:'absolute', inset:0, background:'rgba(255, 87, 87,0.4)', display:'flex', alignItems:'center', justifyContent:'center' }}>
                             <span style={{ fontSize:20 }}>📂</span>
                           </div>
                         )}
@@ -250,7 +250,7 @@ export default function SetupPage() {
               value={styleDescription}
               onChange={(e) => setStyleDescription(e.target.value)}
               rows={3}
-              placeholder="z.B. Herr Tech Stil: dunkler Hintergrund, dynamische Schriften, energetisch, schnelle Cuts, Farben: schwarz und lila"
+              placeholder="z.B. JuThinkAI Stil: heller Hintergrund, warme Typografie, JuThinkAI-Rot als Akzent, klar und menschlich, schnelle Cuts, Farben: schwarz und lila"
               style={{
                 width: '100%', background: T.surface, border: `1px solid ${T.border}`,
                 borderRadius: 12, color: T.text, padding: '12px 16px', fontSize: 14,
@@ -403,7 +403,7 @@ export default function SetupPage() {
 function Section({ title, children }) {
   return (
     <div style={{ marginBottom: 36 }}>
-      <h2 style={{ fontSize: 13, fontWeight: 700, color: '#B598E2', letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 16px' }}>
+      <h2 style={{ fontSize: 13, fontWeight: 700, color: '#FF5757', letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 16px' }}>
         {title}
       </h2>
       <div style={{ background: '#111111', border: '1px solid #1e1e1e', borderRadius: 16, padding: '24px' }}>

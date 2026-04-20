@@ -4,16 +4,16 @@ import { signOut } from 'next-auth/react';
 import Head from 'next/head';
 
 const T = {
-  bg:        '#000000',
-  surface:   '#0d0d0d',
-  card:      '#111111',
-  border:    '#1e1e1e',
-  accent:    '#B598E2',
-  accentBg:  'rgba(181,152,226,0.08)',
-  accentBrd: 'rgba(181,152,226,0.25)',
-  text:      '#ffffff',
-  muted:     '#666666',
-  subtle:    '#222222',
+  bg:        '#ffffff',
+  surface:   '#f8f9fc',
+  card:      '#ffffff',
+  border:    '#e5e7eb',
+  accent:    '#FF5757',
+  accentBg:  'rgba(255,87,87,0.08)',
+  accentBrd: 'rgba(255,87,87,0.25)',
+  text:      '#0a1437',
+  muted:     '#6b7280',
+  subtle:    '#f3f4f6',
   green:     '#22c55e',
   greenBg:   'rgba(34,197,94,0.08)',
   greenBrd:  'rgba(34,197,94,0.25)',
@@ -373,7 +373,7 @@ function SceneVideoCard({ scene, sceneIdx, projectId, onGenerate, onGenerateProm
             onClick={() => onGeneratePrompt(sceneIdx, scriptText, hints, (p) => { setVideoPrompt(p); setPromptDirty(false); }, scriptType)}
             disabled={generatingPrompt || generating}
             style={{
-              background: generatingPrompt ? T.accentBg : 'rgba(181,152,226,0.12)',
+              background: generatingPrompt ? T.accentBg : 'rgba(255, 87, 87,0.12)',
               border: `1px solid ${T.accentBrd}`, borderRadius:9999,
               color: T.accent, fontWeight:700, fontSize:12, padding:'7px 16px',
               cursor: (generatingPrompt || generating) ? 'not-allowed' : 'pointer',
@@ -493,7 +493,7 @@ function SceneVideoCard({ scene, sceneIdx, projectId, onGenerate, onGenerateProm
                     </button>
                     <button
                       onClick={() => onGenerate(sceneIdx, scene.videoPrompt, 'kling', selectedAudio, scene.scriptType)}
-                      style={{ background:'rgba(181,152,226,.12)', border:`1px solid rgba(181,152,226,.3)`, borderRadius:9999, color:'#B598E2', fontSize:11, fontWeight:700, padding:'5px 14px', cursor:'pointer' }}>
+                      style={{ background:'rgba(255, 87, 87,.12)', border:`1px solid rgba(255, 87, 87,.3)`, borderRadius:9999, color:'#FF5757', fontSize:11, fontWeight:700, padding:'5px 14px', cursor:'pointer' }}>
                       ✦ Mit Kling generieren
                     </button>
                   </div>
@@ -512,7 +512,7 @@ function SceneVideoCard({ scene, sceneIdx, projectId, onGenerate, onGenerateProm
                     </button>
                     <button
                       onClick={() => onGenerate(sceneIdx, scene.videoPrompt, 'kling', selectedAudio, scene.scriptType)}
-                      style={{ background:'rgba(181,152,226,.12)', border:`1px solid rgba(181,152,226,.3)`, borderRadius:9999, color:'#B598E2', fontSize:11, fontWeight:700, padding:'5px 14px', cursor:'pointer' }}>
+                      style={{ background:'rgba(255, 87, 87,.12)', border:`1px solid rgba(255, 87, 87,.3)`, borderRadius:9999, color:'#FF5757', fontSize:11, fontWeight:700, padding:'5px 14px', cursor:'pointer' }}>
                       ✦ Mit Kling generieren
                     </button>
                   </div>
@@ -788,7 +788,7 @@ export default function VideosPage() {
 
   return (
     <>
-      <Head><title>Videos — Herr Tech</title></Head>
+      <Head><title>Videos — JuThinkAI</title></Head>
       <style>{`
         @keyframes spin   { to { transform:rotate(360deg); } }
         @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
@@ -847,7 +847,7 @@ export default function VideosPage() {
                 onClick={generateAllPrompts}
                 disabled={genAllPrompts}
                 style={{
-                  background: genAllPrompts ? T.accentBg : 'rgba(181,152,226,0.12)',
+                  background: genAllPrompts ? T.accentBg : 'rgba(255, 87, 87,0.12)',
                   border: `1px solid ${T.accentBrd}`, borderRadius:9999,
                   color: T.accent, fontWeight:700, fontSize:13, padding:'8px 20px',
                   cursor: genAllPrompts ? 'not-allowed' : 'pointer',
@@ -939,7 +939,7 @@ export default function VideosPage() {
             {doneCount > 0 && (
               <button
                 onClick={() => router.push(`/export/${id}`)}
-                style={{ background:`linear-gradient(135deg, ${T.accent}, #8b68d4)`, border:`1px solid ${T.accent}`, borderRadius:9999, color:'#fff', fontWeight:700, fontSize:13, padding:'10px 28px', cursor:'pointer', boxShadow:`0 0 20px rgba(181,152,226,0.3)` }}>
+                style={{ background:`linear-gradient(135deg, ${T.accent}, #8b68d4)`, border:`1px solid ${T.accent}`, borderRadius:9999, color:'#fff', fontWeight:700, fontSize:13, padding:'10px 28px', cursor:'pointer', boxShadow:`0 0 20px rgba(255, 87, 87,0.3)` }}>
                 Weiter → Export 🎬
               </button>
             )}

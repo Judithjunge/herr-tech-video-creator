@@ -4,16 +4,16 @@ import { signOut } from 'next-auth/react';
 import Head from 'next/head';
 
 const T = {
-  bg:        '#000000',
-  surface:   '#0d0d0d',
-  card:      '#111111',
-  border:    '#1e1e1e',
-  accent:    '#B598E2',
-  accentBg:  'rgba(181,152,226,0.08)',
-  accentBrd: 'rgba(181,152,226,0.25)',
-  text:      '#ffffff',
-  muted:     '#666666',
-  subtle:    '#222222',
+  bg:        '#ffffff',
+  surface:   '#f8f9fc',
+  card:      '#ffffff',
+  border:    '#e5e7eb',
+  accent:    '#FF5757',
+  accentBg:  'rgba(255,87,87,0.08)',
+  accentBrd: 'rgba(255,87,87,0.25)',
+  text:      '#0a1437',
+  muted:     '#6b7280',
+  subtle:    '#f3f4f6',
   green:     '#22c55e',
   greenBg:   'rgba(34,197,94,0.08)',
   greenBrd:  'rgba(34,197,94,0.25)',
@@ -167,7 +167,7 @@ export default function ScenesPage() {
 
   return (
     <>
-      <Head><title>Szenen — Herr Tech</title></Head>
+      <Head><title>Szenen — JuThinkAI</title></Head>
       <style>{`
         @keyframes spin   { to { transform:rotate(360deg); } }
         @keyframes fadeIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:none; } }
@@ -274,7 +274,7 @@ export default function ScenesPage() {
 
             {/* Stil-Vorgaben panel */}
             {showGlobalStyle && (
-              <div style={{ background:'rgba(181,152,226,0.05)', border:`1px solid ${T.accentBrd}`, borderRadius:14, padding:'16px 18px', animation:'fadeIn .2s' }}>
+              <div style={{ background:'rgba(255, 87, 87,0.05)', border:`1px solid ${T.accentBrd}`, borderRadius:14, padding:'16px 18px', animation:'fadeIn .2s' }}>
 
                 {/* ── Section 1: Projekt-Einstellungen (persistent) ── */}
                 <div style={{ fontSize:10, fontWeight:700, color:T.accent, letterSpacing:'0.5px', textTransform:'uppercase', marginBottom:10 }}>
@@ -847,7 +847,7 @@ function SceneCard({ scene, projectId, format, onUpdate, prevScene = null, nextS
                       } catch (e) { setErr(e.message); }
                     }}
                     title="Diesen Screenshot direkt als Bild für Video verwenden"
-                    style={{ position:'absolute', top:3, left:3, background:'rgba(0,0,0,0.75)', border:`1px solid rgba(181,152,226,0.4)`, borderRadius:4, color:'rgba(181,152,226,0.85)', fontSize:8, padding:'1px 5px', cursor:'pointer', fontWeight:700, lineHeight:1.4, whiteSpace:'nowrap' }}>
+                    style={{ position:'absolute', top:3, left:3, background:'rgba(0,0,0,0.75)', border:`1px solid rgba(255, 87, 87,0.4)`, borderRadius:4, color:'rgba(255, 87, 87,0.85)', fontSize:8, padding:'1px 5px', cursor:'pointer', fontWeight:700, lineHeight:1.4, whiteSpace:'nowrap' }}>
                     → Video
                   </button>
                 </div>
@@ -968,7 +968,7 @@ function SceneCard({ scene, projectId, format, onUpdate, prevScene = null, nextS
                 ) : null}
 
                 {/* ⚡ Was soll generiert werden — PRIMÄR-INPUT + optionales Referenzbild */}
-                <div style={{ background:'rgba(181,152,226,0.07)', border:`1px solid ${T.accentBrd}`, borderRadius:10, padding:'9px 12px' }}>
+                <div style={{ background:'rgba(255, 87, 87,0.07)', border:`1px solid ${T.accentBrd}`, borderRadius:10, padding:'9px 12px' }}>
                   <div style={{ fontSize:9, fontWeight:700, color:T.accent, letterSpacing:'0.5px', textTransform:'uppercase', marginBottom:7 }}>
                     ⚡ Was soll generiert werden?
                     <span style={{ color:'#444', fontWeight:400, textTransform:'none', letterSpacing:0, fontSize:9 }}> — Primär-Input + optionales Referenzbild</span>
@@ -1407,7 +1407,7 @@ function CharPanel({ scene, projectId, onClose, onUpdate, projectCharacters = []
                     onClick={() => addFromLibrary(gc)}
                     disabled={isAdding}
                     style={{ flexShrink:0, background:T.accentBg, border:`1px solid ${T.accentBrd}`, borderRadius:9999, color:T.accent, fontWeight:700, fontSize:11, padding:'4px 10px', cursor:'pointer', whiteSpace:'nowrap', transition:'background .15s' }}
-                    onMouseEnter={e => e.currentTarget.style.background = 'rgba(181,152,226,0.18)'}
+                    onMouseEnter={e => e.currentTarget.style.background = 'rgba(255, 87, 87,0.18)'}
                     onMouseLeave={e => e.currentTarget.style.background = T.accentBg}>
                     {isAdding ? '…' : '+ Übernehmen'}
                   </button>
@@ -1725,7 +1725,7 @@ function InsertSceneForm({ insertAfterIndex, projectId, scenes, onDone, onCancel
   }
 
   return (
-    <div style={{ background:'rgba(181,152,226,0.05)', border:`1px solid ${T.accentBrd}`, borderRadius:14, padding:'14px 18px', margin:'4px 0', animation:'fadeIn .2s' }}>
+    <div style={{ background:'rgba(255, 87, 87,0.05)', border:`1px solid ${T.accentBrd}`, borderRadius:14, padding:'14px 18px', margin:'4px 0', animation:'fadeIn .2s' }}>
       <div style={{ fontSize:10, fontWeight:700, color:T.accent, letterSpacing:'0.5px', textTransform:'uppercase', marginBottom:10 }}>
         + Neue Szene einfügen{insertAfterIndex >= 0 ? ` nach Szene #${insertAfterIndex + 1}` : ' am Anfang'}
       </div>
@@ -1762,7 +1762,7 @@ function InsertSceneForm({ insertAfterIndex, projectId, scenes, onDone, onCancel
         </div>
         <textarea value={manualInput} onChange={e => setManualInput(e.target.value)} rows={2}
           placeholder="Beschreibe die Szene: Was ist zu sehen? Welche Stimmung, Charaktere, Setting…"
-          style={{ width:'100%', background:'rgba(181,152,226,0.05)', border:`1px solid ${T.accentBrd}`, borderRadius:7, color:T.text, padding:'7px 10px', fontSize:13, resize:'none', outline:'none', lineHeight:1.5 }}
+          style={{ width:'100%', background:'rgba(255, 87, 87,0.05)', border:`1px solid ${T.accentBrd}`, borderRadius:7, color:T.text, padding:'7px 10px', fontSize:13, resize:'none', outline:'none', lineHeight:1.5 }}
           onFocus={e => e.target.style.borderColor = T.accent}
           onBlur={e => e.target.style.borderColor = T.accentBrd} />
       </div>
@@ -1896,7 +1896,7 @@ function ManualRefImageUpload({ scene, projectId, onUpdate, compact = false, thu
           {refUrl ? (
             <>
               <img src={refUrl} style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }} />
-              {dragging && <div style={{ position:'absolute', inset:0, background:'rgba(181,152,226,0.4)', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={{ fontSize:14 }}>📂</span></div>}
+              {dragging && <div style={{ position:'absolute', inset:0, background:'rgba(255, 87, 87,0.4)', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={{ fontSize:14 }}>📂</span></div>}
               <div style={{ position:'absolute', bottom:2, right:2, background:'rgba(0,0,0,0.75)', borderRadius:3, fontSize:7, color:T.accent, padding:'1px 3px', fontWeight:700 }}>✓</div>
             </>
           ) : uploading ? (
@@ -1925,7 +1925,7 @@ function ManualRefImageUpload({ scene, projectId, onUpdate, compact = false, thu
           onDrop={e => { e.preventDefault(); setDragging(false); upload(e.dataTransfer.files[0]); }}>
           <img src={refUrl} alt="Referenz" style={{ width:'100%', height:'100%', objectFit:'cover', display:'block', borderRadius:6 }} />
           {dragging && (
-            <div style={{ position:'absolute', inset:0, background:'rgba(181,152,226,0.35)', display:'flex', alignItems:'center', justifyContent:'center', borderRadius:6 }}>
+            <div style={{ position:'absolute', inset:0, background:'rgba(255, 87, 87,0.35)', display:'flex', alignItems:'center', justifyContent:'center', borderRadius:6 }}>
               <span style={{ fontSize:22 }}>📂</span>
             </div>
           )}

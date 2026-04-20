@@ -5,17 +5,17 @@ import Head from 'next/head';
 
 /* ── Design-Tokens ─────────────────────────────────────────── */
 const T = {
-  bg:        '#000000',
-  surface:   '#0d0d0d',
-  card:      '#111111',
-  border:    '#1e1e1e',
-  accent:    '#B598E2',
-  accentBg:  'rgba(181,152,226,0.08)',
-  accentBrd: 'rgba(181,152,226,0.25)',
-  btn:       '#B598E2',
-  text:      '#ffffff',
-  muted:     '#666666',
-  subtle:    '#222222',
+  bg:        '#ffffff',
+  surface:   '#f8f9fc',
+  card:      '#ffffff',
+  border:    '#e5e7eb',
+  accent:    '#FF5757',
+  accentBg:  'rgba(255,87,87,0.08)',
+  accentBrd: 'rgba(255,87,87,0.25)',
+  btn:       '#FF5757',
+  text:      '#0a1437',
+  muted:     '#6b7280',
+  subtle:    '#f3f4f6',
   green:     '#22c55e',
   red:       '#ef4444',
 };
@@ -228,7 +228,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>KI Video Creator — Herr Tech</title>
+        <title>JuThinkAI Video Creator</title>
       </Head>
 
       <style>{`
@@ -250,7 +250,7 @@ export default function HomePage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             {isAdmin && (
               <button onClick={() => router.push('/admin')}
-                style={{ background:'none', border:`1px solid #B598E244`, borderRadius:9999, color:'#B598E2', fontSize:12, padding:'5px 12px', cursor:'pointer' }}>
+                style={{ background:'none', border:`1px solid #FF575744`, borderRadius:9999, color:'#FF5757', fontSize:12, padding:'5px 12px', cursor:'pointer' }}>
                 Admin
               </button>
             )}
@@ -413,7 +413,7 @@ export default function HomePage() {
                 <p style={{ color: '#f87171', fontSize: 13, margin: '0 0 10px', lineHeight: 1.5 }}>
                   {platformBlock} erkennt unseren Server als Bot und verweigert den Download — das passiert immer zuverlässiger bei allen großen Plattformen, egal welche Tools man nutzt.
                 </p>
-                <div style={{ background: 'rgba(181,152,226,0.08)', border: `1px solid rgba(181,152,226,0.2)`, borderRadius: 10, padding: '10px 14px' }}>
+                <div style={{ background: 'rgba(255, 87, 87,0.08)', border: `1px solid rgba(255, 87, 87,0.2)`, borderRadius: 10, padding: '10px 14px' }}>
                   <p style={{ color: T.accent, fontSize: 13, fontWeight: 600, margin: '0 0 6px' }}>✅ So geht's trotzdem:</p>
                   <ol style={{ color: '#ccc', fontSize: 13, margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>
                     <li>Video im Browser auf {platformBlock} öffnen</li>
@@ -558,7 +558,7 @@ export default function HomePage() {
         </main>
 
         <footer style={{ borderTop: `1px solid ${T.border}`, padding: '20px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <span style={{ color: T.muted, fontSize: 13 }}>© 2025 herr.tech · KI Video Creator</span>
+          <span style={{ color: T.muted, fontSize: 13 }}>© 2025 juthinkai.de · KI Video Creator</span>
           <span style={{ color: T.subtle, fontSize: 12 }}>Whisper · Claude · Imagen · Kling · Veo3</span>
         </footer>
 
@@ -569,6 +569,6 @@ export default function HomePage() {
 
 function Spinner() {
   return (
-    <div style={{ width: 10, height: 10, border: '2px solid #333', borderTopColor: '#B598E2', borderRadius: '50%', animation: 'spin .7s linear infinite' }} />
+    <div style={{ width: 10, height: 10, border: '2px solid #333', borderTopColor: '#FF5757', borderRadius: '50%', animation: 'spin .7s linear infinite' }} />
   );
 }

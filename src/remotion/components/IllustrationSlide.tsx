@@ -33,7 +33,7 @@ export function IllustrationSlide({ text_overlay, illustration_prompt, style }: 
   });
 
   // Stil aus dem style-String lesen: "flat design, dark background, red accent" → rote Akzentfarbe
-  const accentColor = '#B598E2'; // Herr Tech Markenfarbe
+  const accentColor = '#FF5757'; // JuThinkAI Markenfarbe
 
   return (
     <AbsoluteFill

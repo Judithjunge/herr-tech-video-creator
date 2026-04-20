@@ -4,16 +4,16 @@ import { useSession, signOut } from 'next-auth/react';
 import Head from 'next/head';
 
 const T = {
-  bg:        '#000000',
-  surface:   '#0d0d0d',
-  card:      '#111111',
-  border:    '#1e1e1e',
-  accent:    '#B598E2',
-  accentBg:  'rgba(181,152,226,0.08)',
-  accentBrd: 'rgba(181,152,226,0.25)',
-  text:      '#ffffff',
-  muted:     '#666666',
-  subtle:    '#222222',
+  bg:        '#ffffff',
+  surface:   '#f8f9fc',
+  card:      '#ffffff',
+  border:    '#e5e7eb',
+  accent:    '#FF5757',
+  accentBg:  'rgba(255,87,87,0.08)',
+  accentBrd: 'rgba(255,87,87,0.25)',
+  text:      '#0a1437',
+  muted:     '#6b7280',
+  subtle:    '#f3f4f6',
   green:     '#22c55e',
   greenBg:   'rgba(34,197,94,0.08)',
   greenBrd:  'rgba(34,197,94,0.25)',
@@ -149,7 +149,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <Head><title>Meine Projekte — Herr Tech</title></Head>
+      <Head><title>Meine Projekte — JuThinkAI</title></Head>
       <style>{`
         @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
         @keyframes spin { to { transform: rotate(360deg); } }
@@ -166,7 +166,7 @@ export default function ProjectsPage() {
           <div style={{ display:'flex', alignItems:'center', gap:12 }}>
             {isAdmin && (
               <button onClick={() => router.push('/admin')}
-                style={{ background:'none', border:'1px solid #B598E244', borderRadius:9999, color:'#B598E2', fontSize:12, padding:'5px 12px', cursor:'pointer' }}>
+                style={{ background:'none', border:'1px solid #FF575744', borderRadius:9999, color:'#FF5757', fontSize:12, padding:'5px 12px', cursor:'pointer' }}>
                 Admin
               </button>
             )}
@@ -348,7 +348,7 @@ export default function ProjectsPage() {
                           <button
                             onClick={e => { e.stopPropagation(); router.push(`/scenes/${p.id}`); }}
                             style={{ background:T.accentBg, border:'none', color:T.accent, fontWeight:700, fontSize:12, padding:'0 18px', cursor:'pointer', whiteSpace:'nowrap', alignSelf:'stretch', transition:'background .15s' }}
-                            onMouseEnter={e => e.currentTarget.style.background = 'rgba(181,152,226,0.15)'}
+                            onMouseEnter={e => e.currentTarget.style.background = 'rgba(255, 87, 87,0.15)'}
                             onMouseLeave={e => e.currentTarget.style.background = T.accentBg}>
                             ✏ Erneut bearbeiten
                           </button>
@@ -357,7 +357,7 @@ export default function ProjectsPage() {
                         <button
                           onClick={e => { e.stopPropagation(); router.push(projectRoute(p)); }}
                           style={{ flexShrink:0, background:T.accentBg, border:'none', borderLeft:`1px solid ${T.border}`, color:T.accent, fontWeight:700, fontSize:12, padding:'0 20px', cursor:'pointer', whiteSpace:'nowrap', alignSelf:'stretch', transition:'background .15s' }}
-                          onMouseEnter={e => e.currentTarget.style.background = 'rgba(181,152,226,0.15)'}
+                          onMouseEnter={e => e.currentTarget.style.background = 'rgba(255, 87, 87,0.15)'}
                           onMouseLeave={e => e.currentTarget.style.background = T.accentBg}>
                           Weitermachen →
                         </button>

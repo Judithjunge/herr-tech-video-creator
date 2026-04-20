@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const T = {
-  bg: '#000000', card: '#111111', border: '#1e1e1e',
-  accent: '#B598E2', text: '#ffffff', muted: '#666666',
+  bg: '#ffffff', card: '#ffffff', border: '#e5e7eb',
+  accent: '#FF5757', text: '#0a1437', muted: '#6b7280',
   red: '#ef4444', redBg: 'rgba(239,68,68,0.08)', redBrd: 'rgba(239,68,68,0.25)',
   amber: '#f59e0b', amberBg: 'rgba(245,158,11,0.08)', amberBrd: 'rgba(245,158,11,0.25)',
 };
@@ -42,7 +42,7 @@ export default function ErrorPage() {
 
   return (
     <>
-      <Head><title>Fehler — Herr Tech</title></Head>
+      <Head><title>Fehler — JuThinkAI</title></Head>
       <div style={{
         minHeight: '100vh', background: T.bg,
         display: 'flex', alignItems: 'center', justifyContent: 'center',

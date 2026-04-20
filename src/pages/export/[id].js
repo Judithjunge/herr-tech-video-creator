@@ -4,16 +4,16 @@ import { signOut } from 'next-auth/react';
 import Head from 'next/head';
 
 const T = {
-  bg:        '#000000',
-  surface:   '#0d0d0d',
-  card:      '#111111',
-  border:    '#1e1e1e',
-  accent:    '#B598E2',
-  accentBg:  'rgba(181,152,226,0.08)',
-  accentBrd: 'rgba(181,152,226,0.25)',
-  text:      '#ffffff',
-  muted:     '#666666',
-  subtle:    '#222222',
+  bg:        '#ffffff',
+  surface:   '#f8f9fc',
+  card:      '#ffffff',
+  border:    '#e5e7eb',
+  accent:    '#FF5757',
+  accentBg:  'rgba(255,87,87,0.08)',
+  accentBrd: 'rgba(255,87,87,0.25)',
+  text:      '#0a1437',
+  muted:     '#6b7280',
+  subtle:    '#f3f4f6',
   green:     '#22c55e',
   greenBg:   'rgba(34,197,94,0.08)',
   greenBrd:  'rgba(34,197,94,0.25)',
@@ -144,7 +144,7 @@ function Spinner({ size = 14, color = T.accent }) {
   return (
     <span style={{
       width: size, height: size, borderRadius: '50%',
-      border: `2px solid rgba(181,152,226,0.25)`,
+      border: `2px solid rgba(255, 87, 87,0.25)`,
       borderTopColor: color,
       display: 'inline-block',
       animation: 'spin .7s linear infinite',
@@ -470,7 +470,7 @@ function SceneCard({ clip, index, total, onUpdate, onMove, projectId, format,
             onClick={isPreviewPlaying ? stopPreview : playTrimPreview}
             style={{
               position: 'absolute', bottom: 14, left: '50%', transform: 'translateX(-50%)',
-              background: isPreviewPlaying ? 'rgba(239,68,68,0.9)' : 'rgba(181,152,226,0.9)',
+              background: isPreviewPlaying ? 'rgba(239,68,68,0.9)' : 'rgba(255, 87, 87,0.9)',
               border: 'none', borderRadius: 9999, color: '#fff',
               fontSize: 10, fontWeight: 700, padding: '4px 10px', cursor: 'pointer',
               whiteSpace: 'nowrap', backdropFilter: 'blur(4px)',
@@ -846,7 +846,7 @@ export default function ExportPage() {
 
   return (
     <>
-      <Head><title>Export — Herr Tech</title></Head>
+      <Head><title>Export — JuThinkAI</title></Head>
       <style>{`
         @keyframes spin { to { transform:rotate(360deg); } }
         @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
@@ -1139,7 +1139,7 @@ export default function ExportPage() {
                 fontWeight: 700, fontSize: 13, padding: '10px 28px',
                 cursor: canExport ? 'pointer' : 'not-allowed',
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                boxShadow: canExport ? `0 0 20px rgba(181,152,226,0.3)` : 'none',
+                boxShadow: canExport ? `0 0 20px rgba(255, 87, 87,0.3)` : 'none',
                 transition: 'all .15s',
               }}>
               {isProcessing

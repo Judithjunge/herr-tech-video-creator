@@ -8,19 +8,19 @@ function getResend() {
 }
 const resend = { emails: { send: (...args) => getResend().emails.send(...args) } };
 
-const FROM = process.env.EMAIL_FROM || 'Herr Tech <noreply@herr.tech>';
+const FROM = process.env.EMAIL_FROM || 'JuThinkAI <noreply@juthinkai.de>';
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'jacob@startup-creator.com';
-const APP_URL = process.env.NEXTAUTH_URL || 'https://videos.herr.tech';
+const APP_URL = process.env.NEXTAUTH_URL || 'https://juthinkai.de/video';
 
 // ── Theme ────────────────────────────────────────────────────────────────────
 const T = {
   bg:      '#0a0a0a',
-  card:    '#111111',
-  border:  '#1e1e1e',
-  accent:  '#B598E2',
-  text:    '#ffffff',
+  card:    '#ffffff',
+  border:  '#e5e7eb',
+  accent:  '#FF5757',
+  text:    '#0a1437',
   muted:   '#888888',
-  subtle:  '#222222',
+  subtle:  '#f3f4f6',
 };
 
 // ── Basis-Template ───────────────────────────────────────────────────────────
@@ -84,7 +84,7 @@ function baseTemplate({ title, body, ctaText, ctaUrl, footer }) {
         <tr>
           <td style="padding:20px 40px;border-top:1px solid ${T.border};
                      font-size:12px;color:${T.muted};line-height:1.6;">
-            ${footer || `© ${new Date().getFullYear()} herr.tech — KI Video Creator`}
+            ${footer || `© ${new Date().getFullYear()} juthinkai.de — KI Video Creator`}
           </td>
         </tr>
 
@@ -101,7 +101,7 @@ async function sendMagicLinkEmail(email, url) {
     title: 'Dein Login-Link',
     body: `
       <p style="margin:0 0 16px;color:${T.muted};">
-        Klicke auf den Button um dich bei Herr Tech anzumelden.<br>
+        Klicke auf den Button um dich bei JuThinkAI Video Creator anzumelden.<br>
         Der Link ist <strong style="color:${T.text};">30 Minuten</strong> gültig.
       </p>
       <p style="margin:0;color:${T.muted};font-size:13px;">
@@ -114,7 +114,7 @@ async function sendMagicLinkEmail(email, url) {
   await resend.emails.send({
     from: FROM,
     to: email,
-    subject: 'Dein Login-Link — Herr Tech',
+    subject: 'Dein Login-Link — JuThinkAI',
     html,
   });
 }
@@ -143,7 +143,7 @@ async function sendRequestReceivedEmail(email, name) {
   await resend.emails.send({
     from: FROM,
     to: email,
-    subject: 'Zugriffsanfrage erhalten — Herr Tech',
+    subject: 'Zugriffsanfrage erhalten — JuThinkAI',
     html,
   });
 }
@@ -212,7 +212,7 @@ async function sendAccessGrantedEmail(email, name, loginUrl) {
   await resend.emails.send({
     from: FROM,
     to: email,
-    subject: 'Zugang freigeschaltet — Herr Tech',
+    subject: 'Zugang freigeschaltet — JuThinkAI',
     html,
   });
 }
@@ -236,7 +236,7 @@ async function sendRejectionEmail(email, name) {
   await resend.emails.send({
     from: FROM,
     to: email,
-    subject: 'Zugriffsanfrage — Herr Tech',
+    subject: 'Zugriffsanfrage — JuThinkAI',
     html,
   });
 }

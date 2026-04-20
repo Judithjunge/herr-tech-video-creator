@@ -85,7 +85,7 @@ export default function AdminUserDetail() {
                 <div style={{ color: '#888', fontSize: 14 }}>{user.email}</div>
                 <div style={{ marginTop: 8 }}>
                   <span style={badge(user.status)}>{STATUS_LABEL[user.status]}</span>
-                  {user.role === 'admin' && <span style={{ marginLeft: 8, fontSize: 12, color: '#B598E2', background: '#B598E222', padding: '2px 8px', borderRadius: 4 }}>Admin</span>}
+                  {user.role === 'admin' && <span style={{ marginLeft: 8, fontSize: 12, color: '#FF5757', background: '#FF575722', padding: '2px 8px', borderRadius: 4 }}>Admin</span>}
                 </div>
               </div>
             </div>
