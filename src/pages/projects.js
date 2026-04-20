@@ -175,7 +175,7 @@ export default function ProjectsPage() {
               + Neues Projekt
             </button>
             {session?.user && (
-              <button onClick={() => window.location.reload();}
+              <button onClick={() => window.location.reload()}
                 style={{ background:'none', border:'none', color:T.muted, fontSize:12, cursor:'pointer', padding:'4px 8px' }}>
                 Abmelden
               </button>
