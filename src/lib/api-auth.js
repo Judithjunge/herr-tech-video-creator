@@ -1,32 +1,44 @@
-/**
- * Wiederverwendbare Auth-Hilfsfunktionen für API-Routes.
- * Ersetzt das alte Cookie-basierte user-session.js System.
- */
+// BasicAuth (Caddy) ist die einzige Auth-Schicht.
+// Server-seitig: wer diesen Code erreicht, wurde schon von Caddy gelassen → Admin.
+const { prisma } = require('./prisma');
 
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../pages/api/auth/[...nextauth]';
+let cachedAdmin = null;
 
-/**
- * Gibt die aktuelle Session zurück oder sendet 401.
- * Verwendung in API-Handlern:
- *   const { session, ownerId } = await requireAuth(req, res);
- *   if (!session) return; // 401 bereits gesendet
- */
-export async function requireAuth(req, res) {
-  const session = await getServerSession(req, res, authOptions);
-  if (!session?.user?.id) {
-    res.status(401).json({ error: 'Nicht autorisiert' });
-    return { session: null, ownerId: null };
+async function getAdminUser() {
+  if (cachedAdmin) return cachedAdmin;
+  const email = (process.env.ADMIN_EMAIL || 'admin@juthinkai.de').toLowerCase().trim();
+  let user = await prisma.user.findUnique({ where: { email } });
+  if (!user) {
+    user = await prisma.user.create({
+      data: {
+        email,
+        name: 'Judith',
+        role: 'admin',
+        status: 'ACTIVE',
+        emailVerified: new Date(),
+        approvedAt: new Date(),
+      },
+    });
+  } else if (user.status !== 'ACTIVE' || user.role !== 'admin') {
+    user = await prisma.user.update({
+      where: { id: user.id },
+      data: { status: 'ACTIVE', role: 'admin' },
+    });
   }
-  return { session, ownerId: session.user.id };
+  cachedAdmin = user;
+  return user;
 }
 
-/**
- * Prüft ob der aktuelle User Admin ist.
- */
-export function isAdmin(session) {
-  return (
-    session?.user?.role === 'admin' ||
-    session?.user?.email === process.env.ADMIN_EMAIL
-  );
+async function requireSession(req, res) {
+  const user = await getAdminUser();
+  return {
+    session: { user: { id: user.id, email: user.email, role: 'admin', status: 'ACTIVE', name: user.name } },
+    ownerId: user.id,
+  };
 }
+
+function requireAdmin(session) {
+  return true;
+}
+
+module.exports = { requireSession, requireAdmin, getAdminUser };

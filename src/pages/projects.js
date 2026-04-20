@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { useSession, signOut } from 'next-auth/react';
 import Head from 'next/head';
 
 const T = {
@@ -80,7 +79,7 @@ function firstScreenshotUrl(p) {
 
 export default function ProjectsPage() {
   const router = useRouter();
-  const { data: session } = useSession();
+  const session = { user: { email: process.env.NEXT_PUBLIC_ADMIN_EMAIL, role: 'admin', status: 'ACTIVE', id: 'admin' } };
   const isAdmin = session?.user?.role === 'admin' || session?.user?.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL;
   const [projects, setProjects] = useState([]);
   const [loading, setLoading]   = useState(true);
@@ -176,7 +175,7 @@ export default function ProjectsPage() {
               + Neues Projekt
             </button>
             {session?.user && (
-              <button onClick={() => signOut({ callbackUrl: '/auth/signin' })}
+              <button onClick={() => window.location.reload();}
                 style={{ background:'none', border:'none', color:T.muted, fontSize:12, cursor:'pointer', padding:'4px 8px' }}>
                 Abmelden
               </button>
