@@ -6,7 +6,7 @@ const STATUS_LABEL = { PENDING: 'Ausstehend', ACTIVE: 'Aktiv', DISABLED: 'Deakti
 const STATUS_COLOR = { PENDING: '#f59e0b', ACTIVE: '#22c55e', DISABLED: '#ef4444' };
 
 export default function AdminPanel() {
-  const session = { user: { email: process.env.NEXT_PUBLIC_ADMIN_EMAIL, role: 'admin', status: 'ACTIVE', id: 'admin' } }; const status = 'authenticated';
+  const session = { user: { role: 'admin', status: 'ACTIVE', id: 'admin' } }; const status = 'authenticated';
   const router = useRouter();
   const [users, setUsers] = useState([]);
   const [stats, setStats] = useState(null);
@@ -16,7 +16,7 @@ export default function AdminPanel() {
   const [addName, setAddName] = useState('');
   const [addLoading, setAddLoading] = useState(false);
 
-  const isAdmin = session?.user?.role === 'admin' || session?.user?.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+  const isAdmin = true;
 
   useEffect(() => {
     if (status === 'loading') return;

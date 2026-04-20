@@ -57,8 +57,8 @@ const MANUAL_STEPS = [
 
 export default function HomePage() {
   const router = useRouter();
-  const session = { user: { email: process.env.NEXT_PUBLIC_ADMIN_EMAIL, role: 'admin', status: 'ACTIVE', id: 'admin' } };
-  const isAdmin = session?.user?.role === 'admin' || session?.user?.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+  const session = { user: { role: 'admin', status: 'ACTIVE', id: 'admin' } };
+  const isAdmin = true;
   const fileRef = useRef();
   const [tab, setTab] = useState('url');
   const [creatingManual, setCreatingManual] = useState(false);
